@@ -10,8 +10,9 @@
 % with planewave solution, see Section 5.4.
 
 fprintf('Helmholtz problem for periodic structure with Robin bc on unit square\n');
+current_path=pwd; path(path,[current_path '/functions']); % add function path
 % load geometry, see Figure 5.3
-load periodic.mat
+load data/periodic.mat
 % refine initial mesh sufficiently
 no_p_FEM = 1e5; % number of vertices for the FEM grid to realize ACMS method
 while size(p)<no_p_FEM

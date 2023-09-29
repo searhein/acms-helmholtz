@@ -10,7 +10,8 @@
 % with boundary source, see Section 5.2.
 
 fprintf('Helmholtz problem with Robin bc on circle and localized interior source\n');
-load circle.mat % load geometry as depicted in Figure 5.1 (right)
+current_path=pwd; path(path,[current_path '/functions']); % add function path
+load data/circle.mat % load geometry as depicted in Figure 5.1 (right)
 % pdemesh(p,e,t) % visualize initial mesh and corresponding domain decomposition
 
 % parameters
