@@ -84,8 +84,6 @@ select_edges_ind = 1 : size(global_edges,2);
 F=M*(f(p,0,0,0).');
 [S,R,N]=assemr(p,eout,1,1,1,0);
 System_Matrix = K - kappa^2 * M - 1i * beta * R;
-
-[Sg,Rg,Ng]=assemr(p,eout,1,1,1,0);
 G=R*gR(p).';
 RHS = F + G; % approximates int_{Omega} fv dx + int_{Gamma} gv dGamma
 

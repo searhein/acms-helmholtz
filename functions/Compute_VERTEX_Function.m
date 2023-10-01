@@ -45,7 +45,6 @@ for j = 1 : size(global_edges,2) % loop over edges of domain decomposition
 end
 
 % compute extensions
-for j = 1: size(global_points,2)
-    subdomains_list_aux{j} = unique(subdomains_list_aux{j});
-    Ephi_vertex{j} = Extension_Eu(p, e, t, phi{j}, subdomains_list_aux{j}, System_Matrix);
+parfor j = 1: size(global_points,2)
+    Ephi_vertex{j} = Extension_Eu(p, e, t, phi{j}, unique(subdomains_list_aux{j}), System_Matrix);
 end

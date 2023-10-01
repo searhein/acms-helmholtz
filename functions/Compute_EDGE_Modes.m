@@ -8,7 +8,7 @@ eff_no_modes = cell(length(no_global_edges),1);
 % array for storing corresponding eigenvalues
 lambdas = cell(length(no_global_edges),1);
 
-for j = 1:length(no_global_edges) % loop (in parallel) over edges of domain decomposition
+parfor j = 1:length(no_global_edges) % loop (in parallel) over edges of domain decomposition
     e_loc = e(:, ismember(e(5,:), no_global_edges(j))); % line segments of global mesh that define j-th edge
     % Take only points coordinates and separating boundary and inner points
     e_loc_pts = union(e_loc(1,:), e_loc(2,:)); % Local edge points

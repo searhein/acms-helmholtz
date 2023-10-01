@@ -15,7 +15,7 @@ Vtr=cell(no_ext_dom,1);
 % array for interior points of subdomains
 p_inner=cell(no_ext_dom,1);
 
-for nsub_ind=1:no_ext_dom % loop (in parallel) over subdomains of domain decomposition
+parfor nsub_ind=1:no_ext_dom % loop (in parallel) over subdomains of domain decomposition
     nsub = subdomains_list(nsub_ind); % index of subdomain
 
     % construct local mesh:
@@ -39,7 +39,7 @@ for nsub_ind=1:no_ext_dom % loop (in parallel) over subdomains of domain decompo
     Msub = P_dir'*M*P_dir;
     Msub = (Msub+Msub')/2; % symmetrize for eigenvalue solver
     %     if size(Msub,2)<1000
-    %     [Vtr,Dtr] = eig(full(Bsub), full(P_dir'*M*P_dir));
+    %     [Vtr,Dtr] = eig(full(Bsub), full(Msub));
     %     else
     no_bubbles_aux = min(no_bubbles, size(psub_inner,2)); % limit available number of bubble functions
     [Vtr_tmp,Dtr] = eigs(Ssub, Msub,no_bubbles_aux,'sm'); % solve eigenvalue problems
