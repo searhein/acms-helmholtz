@@ -1,5 +1,7 @@
 # Approximate Component Mode Synthesis (ACMS) method for heterogeneous Helmholtz equations
 
+[![DOI](https://zenodo.org/badge/697971217.svg)](https://zenodo.org/badge/latestdoi/697971217)
+
 This repository contains the Matlab implementation of the extension of the ACMS method to heterogeneous Helmholtz equations as introduced in the paper
 
 **An extension of the approximate component mode synthesis method to the heterogeneous Helmholtz equation** <br>
